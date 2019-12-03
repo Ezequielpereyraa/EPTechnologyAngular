@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from "firebase/app";
+import "firebase/database"
 
 @Component({
   selector: 'app-body',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class BodyComponent implements OnInit {
-
-  constructor() { }
+  lista
+  carusel
+  constructor (){
+ 
+  }
 
   ngOnInit() {
+    var referencias = firebase.database().ref("Productos/Producto");
+    referencias.on('value',(datalist)=>{
+      this.lista = datalist.val()
+    });
+    var imagenes = firebase.database().ref("Caurusel");
+    imagenes.on('value',(datalist)=>{
+      this.carusel =Object.values (datalist.val())
+    });
   }
 
 }

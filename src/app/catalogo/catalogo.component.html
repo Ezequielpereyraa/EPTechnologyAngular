@@ -1,0 +1,22 @@
+<section class="CatalogoDeProductos mb-5">
+        <div class="contenedor container" id="catalogo">
+          <!-- CONTENIDO DE LA PAGINA  -->
+          <h1 class="mt-4 mb-5 text-center">Catalogo de Productos</h1>
+          <div class="row">
+            <div *ngFor="let dato of lista" class="col-4" >
+              <div class="card" style="border: 0.5px solid black; overflow: scroll;">
+                <h5 class="text-center"> {{dato.Nombre}} </h5>
+                <img [src]="dato.Img" class="card-img-top">
+                <div class="card-body">
+                  <p class="card-text d-none" [ngClass]="{'d-block':activo == 'primero'}">{{dato.Descripcion}}</p>
+                </div>
+                <button class="btn btn-primary" (click)="activo='primero'" >Mas Informacion</button>
+                <button class="btn btn-danger d-none" [ngClass]="{'d-block': activo == 'primero'}" (click)="activo='segundo'" >
+                  Menos Informacion 
+                </button>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </section>

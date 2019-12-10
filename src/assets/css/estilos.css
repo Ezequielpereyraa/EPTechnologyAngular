@@ -21,6 +21,16 @@ img-titulo{
     font-size: 45px;
 
 }
+.header1 {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
 
 div .parrafo {
     padding-top:1.2em;
@@ -48,4 +58,7 @@ footer  {
 }
 footer a {
     color: white;
+}
+.direccion p {
+    font-size: 30px;
 }

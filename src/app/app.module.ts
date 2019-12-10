@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import {BodyComponent} from './components/body/body.component'
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 const routes : Routes = [
   {
@@ -35,7 +36,9 @@ const routes : Routes = [
   {
     path : 'contacto',
     component : ContactoComponent
-  }
+  },
+  { path : 'agregar',
+  component : AgregarComponent}
 ]
 
 @NgModule({
@@ -46,7 +49,8 @@ const routes : Routes = [
     FooterComponent,
     UbicacionComponent,
     ContactoComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,

@@ -3,15 +3,15 @@
           <!-- CONTENIDO DE LA PAGINA  -->
           <h1 class="mt-4 mb-5 text-center">Catalogo de Productos</h1>
           <div class="row">
-            <div *ngFor="let dato of lista" class="col-4" >
+            <div *ngFor="let dato of lista; let index = index" class="col-4" >
               <div class="card" style="border: 0.5px solid black; overflow: scroll;">
                 <h5 class="text-center"> {{dato.Nombre}} </h5>
                 <img [src]="dato.Img" class="card-img-top">
                 <div class="card-body">
-                  <p class="card-text d-none" [ngClass]="{'d-block':activo == 'primero'}">{{dato.Descripcion}}</p>
+                  <p class="card-text d-none" [ngClass]="{'d-block':activo == index}">{{dato.Descripcion}}</p>
                 </div>
-                <button class="btn btn-primary" (click)="activo='primero'" >Mas Informacion</button>
-                <button class="btn btn-danger d-none" [ngClass]="{'d-block': activo == 'primero'}" (click)="activo='segundo'" >
+                <button class="btn btn-primary"  (click)="activo=index" >Mas Informacion</button>
+                <button class="btn btn-danger d-none" [ngClass]="{'d-block': activo == index}" (click)="activo=null" >
                   Menos Informacion 
                 </button>
               </div>

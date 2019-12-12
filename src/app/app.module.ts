@@ -14,6 +14,9 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { AgregarComponent } from './agregar/agregar.component';
+import { ProductListComponent } from './products/product-list/product-list.component';
+
+import { ProductService } from './services/product.service'
 
 const routes : Routes = [
   {
@@ -50,7 +53,8 @@ const routes : Routes = [
     UbicacionComponent,
     ContactoComponent,
     CatalogoComponent,
-    AgregarComponent
+    AgregarComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,9 @@ const routes : Routes = [
     NgbModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

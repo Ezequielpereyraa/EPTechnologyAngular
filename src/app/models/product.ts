@@ -1,5 +1,7 @@
 export interface Products {
-    nombre? : string;
-    descripcion? : string ;
-    imagen? : string;
+    $key : string;
+    nombre : string;
+    apellido : string;
+    mensaje : string ;
+    puntuacionDeLaPagina: number;
 }
